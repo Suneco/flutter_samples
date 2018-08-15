@@ -21,10 +21,12 @@ class TrackerPageViewModel implements IViewModelBase {
   var _previousLat = 0.0;
 
   @override
-  Future create(BuildContext context) async {
+  Future create(BuildContext context, State state) async {
     _context = context;
+
+    // For streams it's important to set initial values here
     enabled.add(false);
-    description.add("Page is loaded.");
+    description.add("Press the button below to start tracking.");
   }
 
   void onFabClick() {
@@ -36,6 +38,8 @@ class TrackerPageViewModel implements IViewModelBase {
       _currentDistance = 0.0;
       _previousLng = 0.0;
       _previousLat = 0.0;
+
+      description.add("Press the button below to start tracking.");
 
       final snackBar = SnackBar(content: Text('Listening for updates stopped'));
       Scaffold.of(_context).showSnackBar(snackBar);

@@ -27,7 +27,7 @@ class _State extends State<TrackerPage> {
 
   Widget buildLayout() {
     return Builder(builder: (context) {
-      _viewModel.create(context);
+      _viewModel.create(context, this);
 
       // Create and return your actual layout below
       var layout = new Center(

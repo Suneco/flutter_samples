@@ -11,7 +11,7 @@ class _State extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    _viewModel.create(context);
+    _viewModel.create(context, this);
 
     return new Scaffold(
         appBar: new AppBar(title: new Text(_viewModel.title)),
@@ -20,10 +20,11 @@ class _State extends State<MainPage> {
 
   Widget buildLayout() {
     return Builder(builder: (context) {
-      _viewModel.create(context);
+      _viewModel.create(context, this);
 
       // Create and return your actual layout below
       var layout = new Column(children: <Widget>[
+
         new ListTile(
           leading: const Icon(Icons.location_on),
           title: new Text(
@@ -35,7 +36,21 @@ class _State extends State<MainPage> {
         ),
         const Divider(
           height: 1.0,
+        ),
+
+        new ListTile(
+          leading: const Icon(Icons.accessibility),
+          title: new Text(
+              "Anims will show some basic animations."),
+        ),
+        new FlatButton(
+          onPressed: _viewModel.openAnims,
+          child: new Text("Open anims"),
+        ),
+        const Divider(
+          height: 1.0,
         )
+
       ]);
 
       return layout;

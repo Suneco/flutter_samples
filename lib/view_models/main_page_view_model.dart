@@ -6,7 +6,7 @@ class MainPageViewModel implements IViewModelBase {
   final title = "Main";
 
   @override
-  void create(BuildContext context) {
+  void create(BuildContext context, State state) {
     this.context = context;
   }
 
@@ -17,5 +17,9 @@ class MainPageViewModel implements IViewModelBase {
 
   void openTracker() {
     Navigator.pushNamed(context, '/TrackerPage');
+  }
+
+  void openAnims() {
+    Navigator.pushNamed(context, '/AnimsPage');
   }
 }
