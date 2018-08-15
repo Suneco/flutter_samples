@@ -15,7 +15,21 @@ class _State extends State<MainPage> {
 
     return new Scaffold(
         appBar: new AppBar(title: new Text(_viewModel.title)),
-        body: buildLayout());
+        body: buildLayout(),
+        // Drawer is the MasterDetail thingy
+        drawer: Drawer(
+            child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+          DrawerHeader(
+              child: Text('I am your master'),
+              decoration: BoxDecoration(color: Colors.redAccent)),
+          ListTile(
+              leading: const Icon(Icons.account_balance),
+              title: Text('I am one of your items'),
+              onTap: () {
+                // Do something in the view model
+                Navigator.pop(context);
+              })
+        ])));
   }
 
   Widget buildLayout() {
@@ -24,7 +38,6 @@ class _State extends State<MainPage> {
 
       // Create and return your actual layout below
       var layout = new Column(children: <Widget>[
-
         new ListTile(
           leading: const Icon(Icons.location_on),
           title: new Text(
@@ -37,11 +50,9 @@ class _State extends State<MainPage> {
         const Divider(
           height: 1.0,
         ),
-
         new ListTile(
           leading: const Icon(Icons.accessibility),
-          title: new Text(
-              "Anims will show some basic animations."),
+          title: new Text("Anims will show some basic animations."),
         ),
         new FlatButton(
           onPressed: _viewModel.openAnims,
@@ -50,7 +61,6 @@ class _State extends State<MainPage> {
         const Divider(
           height: 1.0,
         )
-
       ]);
 
       return layout;
