@@ -80,6 +80,7 @@ class TrackerPageViewModel implements IViewModelBase {
   @override
   void dispose() {
     _context = null;
+    _running = false;
     description.close();
   }
 }
