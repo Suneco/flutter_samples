@@ -37,7 +37,7 @@ class _State extends State<MainPage> {
       _viewModel.create(context, this);
 
       // Create and return your actual layout below
-      var layout = new Column(children: <Widget>[
+      var layout = new ListView(children: <Widget>[
         new ListTile(
           leading: const Icon(Icons.location_on),
           title: new Text(
