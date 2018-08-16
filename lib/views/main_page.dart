@@ -60,6 +60,17 @@ class _State extends State<MainPage> {
         ),
         const Divider(
           height: 1.0,
+        ),
+        new ListTile(
+          leading: const Icon(Icons.settings_ethernet),
+          title: new Text("API will make an API request and shows the results."),
+        ),
+        new FlatButton(
+          onPressed: _viewModel.openApi,
+          child: new Text("Open API"),
+        ),
+        const Divider(
+          height: 1.0,
         )
       ]);
 

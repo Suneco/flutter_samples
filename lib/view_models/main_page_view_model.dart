@@ -22,4 +22,8 @@ class MainPageViewModel implements IViewModelBase {
   void openAnims() {
     Navigator.pushNamed(context, '/AnimsPage');
   }
+
+  void openApi() {
+    Navigator.pushNamed(context, '/ApiPage');
+  }
 }

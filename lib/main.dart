@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_samples/views/api_page.dart';
 import 'package:flutter_samples/views/main_page.dart';
 import 'package:flutter_samples/views/tracker_page.dart';
 import 'package:flutter_samples/views/anims_page.dart';
@@ -17,7 +18,8 @@ class App extends StatelessWidget {
         home: new MainPage(),
         routes: <String, WidgetBuilder>{
           '/TrackerPage': (BuildContext context) => new TrackerPage(),
-          '/AnimsPage': (BuildContext context) => new AnimsPage()
+          '/AnimsPage': (BuildContext context) => new AnimsPage(),
+          '/ApiPage': (BuildContext context) => new ApiPage()
         });
   }
 }
