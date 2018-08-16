@@ -13,7 +13,7 @@ class AnimsPageViewModel implements IViewModelBase {
     this.context = context;
 
     controller = AnimationController(
-        vsync: state as TickerProvider, duration: Duration(seconds: 4));
+        vsync: state as TickerProvider, duration: Duration(seconds: 2));
 
     animation = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
       parent: controller,
