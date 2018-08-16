@@ -51,6 +51,9 @@ class TrackerPageViewModel implements IViewModelBase {
     var location = new Location();
 
     location.onLocationChanged.listen((Map<String, double> currentLocation) {
+      if (!_running)
+        return; // TODO: find some way to stop this stream!
+
       final snackBar = SnackBar(content: Text('Got location update!'));
       Scaffold.of(_context).showSnackBar(snackBar);
 
