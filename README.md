@@ -11,12 +11,12 @@ are included:
   - iOS and Material design elements
 
 ## Architecture
-This application contains a MVVM strucure. Every `View` is
+This application contains a MVVM structure. Every `View` is
 responsible for showing the UI, while a `ViewModel` delivers
 data to the `View` and handles all business logic.
 
-In this repo you will all views in the `/view` folder and all
-`ViewModels` inside the `/view_models` folder.
+In this repo you will find all the views in the `/view` folder
+and all `ViewModels` inside the `/view_models` folder.
 
 The most important element being used to render the UI on 
 changes is the `Stream` class. In a `ViewModel` you should
