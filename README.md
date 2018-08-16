@@ -16,7 +16,7 @@ responsible for showing the UI, while a `ViewModel` delivers
 data to the `View` and handles all business logic.
 
 In this repo you will find all the views in the `/view` folder
-and all `ViewModels` inside the `/view_models` folder.
+and all view models inside the `/view_models` folder.
 
 The most important element being used to render the UI on 
 changes is the `Stream` class. In a `ViewModel` you should
