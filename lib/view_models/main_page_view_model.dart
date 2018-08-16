@@ -30,4 +30,8 @@ class MainPageViewModel implements IViewModelBase {
   void openCamera() {
     Navigator.pushNamed(context, '/CameraPage');
   }
+
+  void openCupertino() {
+    Navigator.pushNamed(context, '/CupertinoPage');
+  }
 }

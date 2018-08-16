@@ -82,7 +82,18 @@ class _State extends State<MainPage> {
         ),
         const Divider(
           height: 1.0,
-        )
+        ),
+        new ListTile(
+          leading: const Icon(Icons.location_city),
+          title: new Text("Cupertino will show you some design from Apples."),
+        ),
+        new FlatButton(
+          onPressed: _viewModel.openCupertino,
+          child: new Text("Open Cupertino"),
+        ),
+        const Divider(
+          height: 1.0,
+        ),
       ]);
 
       return layout;
