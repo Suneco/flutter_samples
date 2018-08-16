@@ -44,5 +44,11 @@
 
 	 <key>NSLocationWhenInUseUsageDescription</key>
      <string>Needed to track distance.</string>
+     <key>NSPhotoLibraryUsageDescription</key>
+     <string>Needed to show gallery actions.</string>
+     <key>NSCameraUsageDescription</key>
+     <string>Needed to show camera actions.</string>
+     <key>NSMicrophoneUsageDescription</key>
+     <string>Needed to show camera actions.</string>
 </dict>
 </plist>

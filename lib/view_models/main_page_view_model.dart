@@ -26,4 +26,8 @@ class MainPageViewModel implements IViewModelBase {
   void openApi() {
     Navigator.pushNamed(context, '/ApiPage');
   }
+
+  void openCamera() {
+    Navigator.pushNamed(context, '/CameraPage');
+  }
 }

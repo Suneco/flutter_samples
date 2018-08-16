@@ -71,6 +71,17 @@ class _State extends State<MainPage> {
         ),
         const Divider(
           height: 1.0,
+        ),
+        new ListTile(
+          leading: const Icon(Icons.camera_alt),
+          title: new Text("Camera lets you take and browse pictures."),
+        ),
+        new FlatButton(
+          onPressed: _viewModel.openCamera,
+          child: new Text("Open Camera"),
+        ),
+        const Divider(
+          height: 1.0,
         )
       ]);
 
