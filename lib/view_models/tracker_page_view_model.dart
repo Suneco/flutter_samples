@@ -14,6 +14,7 @@ class TrackerPageViewModel implements IViewModelBase {
 
   final enabled = StreamController<bool>.broadcast();
 
+  var _listener;
   var _running = false;
   var _firstResult = true;
   var _currentDistance = 0.0;
@@ -33,6 +34,7 @@ class TrackerPageViewModel implements IViewModelBase {
     if (_running) {
       enabled.add(false);
 
+      _listener?.cancel();
       _running = false;
       _firstResult = true;
       _currentDistance = 0.0;
@@ -49,11 +51,8 @@ class TrackerPageViewModel implements IViewModelBase {
     enabled.add(true);
 
     var location = new Location();
-
-    location.onLocationChanged.listen((Map<String, double> currentLocation) {
-      if (!_running)
-        return; // TODO: find some way to stop this stream!
-
+    _listener = location.onLocationChanged
+        .listen((Map<String, double> currentLocation) {
       final snackBar = SnackBar(content: Text('Got location update!'));
       Scaffold.of(_context).showSnackBar(snackBar);
 
