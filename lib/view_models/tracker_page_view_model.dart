@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -53,15 +54,16 @@ class TrackerPageViewModel implements IViewModelBase {
     var location = new Location();
     _listener = location.onLocationChanged
         .listen((Map<String, double> currentLocation) {
-      final snackBar = SnackBar(content: Text('Got location update!'));
-      Scaffold.of(_context).showSnackBar(snackBar);
-
       var currentLat = currentLocation["latitude"];
       var currentLng = currentLocation["longitude"];
 
       if (!_firstResult) {
         var distance = GeoUtils.distanceInKmBetweenEarthCoordinates(
             currentLat, currentLng, _previousLat, _previousLng);
+
+        // round values to a precision with 2
+        var factor = pow(10, 2);
+        distance = (distance * factor).round() / factor;
 
         _currentDistance += distance;
         description.add("Current walked distance is $_currentDistance km");
